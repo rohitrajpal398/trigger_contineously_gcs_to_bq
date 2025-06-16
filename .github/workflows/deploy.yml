@@ -23,7 +23,7 @@ jobs:
 
       - name: Activate service account
         run: gcloud auth activate-service-account --key-file="${{ github.workspace }}/key.json"
-
+    
       - name: Configure Docker to authenticate with GCR
         run: gcloud auth configure-docker gcr.io
 
@@ -34,3 +34,4 @@ jobs:
         run: |
           gcloud run jobs update gcs-bq-loader --image gcr.io/${{ secrets.GCP_PROJECT_ID }}/gcs-bq-loader --region ${{ secrets.GCP_REGION }} || \
           gcloud run jobs create gcs-bq-loader --image gcr.io/${{ secrets.GCP_PROJECT_ID }}/gcs-bq-loader --region ${{ secrets.GCP_REGION }}
+
