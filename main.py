@@ -8,7 +8,7 @@ bq_client = bigquery.Client()
 
 # Set your BQ config
 DATASET = "sales_dataset"
-TABLE = "orders.csv"
+TABLE = "orders_tbl1"
 PROJECT = "airy-actor-457907-a8."
 
 @app.route("/", methods=["POST"])
