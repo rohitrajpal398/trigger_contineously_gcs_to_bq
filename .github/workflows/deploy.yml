@@ -36,4 +36,5 @@ jobs:
             --image gcr.io/${{ secrets.GCP_PROJECT_ID }}/trigger_contineously_gcs_to_bq \
             --platform managed \
             --region us-central1 \
+            --timeout=600s 
             --allow-unauthenticated
