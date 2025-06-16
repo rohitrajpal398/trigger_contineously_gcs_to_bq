@@ -21,12 +21,12 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          gcloud builds submit --tag gcr.io/${{ secrets.GCP_PROJECT_ID }}/gcs-bq-loader
+          gcloud builds submit --tag gcr.io/${{ secrets.GCP_PROJECT_ID }}/trigger_contineously_gcs_to_bq
 
       - name: Deploy to Cloud Run
         run: |
           gcloud run deploy gcs-bq-loader \
-            --image gcr.io/${{ secrets.GCP_PROJECT_ID }}/gcs-bq-loader \
+            --image gcr.io/${{ secrets.GCP_PROJECT_ID }}/trigger_contineously_gcs_to_bq \
             --platform managed \
             --region us-central1 \
             --allow-unauthenticated
