@@ -33,7 +33,7 @@ jobs:
       - name: Deploy to Cloud Run
         run: |
              gcloud run deploy gcs-bq-loader \
-             --image gcr.io/airy-actor-457907-a8/gcs-bq-loader \
+             --image gcr.io/airy-actor-457907-a8/trigger_contineously_gcs_to_bq \
              --platform=managed \
              --region=us-central1 \
              --allow-unauthenticated
